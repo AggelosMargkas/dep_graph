@@ -1,10 +1,16 @@
+""" Test the dep_graph function by asserting certain list as an output.
+    This way we can verify if the result is the one expected.
+
+    Also checks the exception for the circle.
+"""
 from dep_graph import dep_graph
-import pytest
 import os
+import pytest
 
-folder_path = './tmp'
-list_of_tests = []
+folder_path = './tmp'  # initial path of the folders.
+list_of_tests = []  # list with all the json, that we test.
 
+# Loop through the folder to get all the dependencies.
 for root, dirs, files in os.walk(folder_path):
     for file in files:
         file_path = os.path.join(root, file)
@@ -12,6 +18,8 @@ for root, dirs, files in os.walk(folder_path):
 
 
 class TestClass:
+    """ Grouping tests in class TestClass.
+    """
 
     def test_initial(self):
         path = list_of_tests[0]
