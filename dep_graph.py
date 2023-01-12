@@ -1,7 +1,7 @@
 import json
 from collections import deque
 
-INITIAL_PATH = '../tmp/deps.json'
+INITIAL_PATH = './tmp/deps.json'
 
 
 def read_json_file(filepath):

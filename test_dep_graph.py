@@ -1,4 +1,4 @@
-from dep_graph.dep_graph import dep_graph
+from dep_graph import dep_graph
 import pytest
 import os
 
@@ -15,11 +15,13 @@ class TestClass:
 
     def test_initial(self):
         path = list_of_tests[0]
-        assert dep_graph(path) == ['pkg1', 'pkg2', 'pkg3', 'pkg3', 'pkg2', 'pkg3', 'pkg3']
+        assert dep_graph(path) == ['pkg1', 'pkg2',
+                                   'pkg3', 'pkg3', 'pkg2', 'pkg3', 'pkg3']
 
     def test_scale(self):
         path = list_of_tests[1]
-        assert dep_graph(path) == ["pkg1", "pkg2", "pkg3", "pkg4", "pkg4", "pkg3", "pkg4", "pkg2", "pkg3", "pkg4", "pkg4", "pkg3", "pkg4", "pkg4",]
+        assert dep_graph(path) == ["pkg1", "pkg2", "pkg3", "pkg4", "pkg4", "pkg3",
+                                   "pkg4", "pkg2", "pkg3", "pkg4", "pkg4", "pkg3", "pkg4", "pkg4", ]
 
     def test_circle(self):
         path = './tmp/deps2.json'
@@ -30,6 +32,3 @@ class TestClass:
     def test_empty(self):
         path = './tmp/deps3.json'
         assert dep_graph(path) == ['pkg1', 'pkg2', 'pkg3']
-
-
-
