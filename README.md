@@ -10,9 +10,11 @@ In this JSON file, a key represents a package name, and the value is a list of d
 }
 ```
 
-The the goal is to traverse all the graph for every dependency. The result is a list containing all the visited dependencies.
+The the goal is to traverse the whole graph for every dependency. The result is a list containing all the visited dependencies.
 
 ```sh
+  Full Dependency Graph.
+  
   ['pkg1', 'pkg2', 'pkg3', 'pkg3', 'pkg2', 'pkg3', 'pkg3']
 ```
 
