@@ -10,11 +10,17 @@ In this JSON file, a key represents a package name, and the value is a list of d
 }
 ```
 
+The the goal is to traverse all the graph for every dependency. The result is a list containing all the visited dependencies.
+
+```sh
+  ['pkg1', 'pkg2', 'pkg3', 'pkg3', 'pkg2', 'pkg3', 'pkg3']
+```
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-1. Clone the repository.
+Clone the repository.
   ```sh
   git clone https://github.com/AggelosMargkas/dep_graph.git
   ```
