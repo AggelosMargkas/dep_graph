@@ -40,3 +40,8 @@ class TestClass:
     def test_empty(self):
         path = './tmp/deps3.json'
         assert dep_graph(path) == ['pkg1', 'pkg2', 'pkg3']
+
+    def test_bigger(self):
+        path = './tmp/deps4.json'
+        assert dep_graph(path) == ['pkg1', 'pkg2', 'pkg3', 'pkg4', 'pkg5', 'pkg4', 'pkg5', 'pkg3', 'pkg4', 'pkg5', 'pkg4',
+                                   'pkg5', 'pkg5', 'pkg2', 'pkg3', 'pkg4', 'pkg5', 'pkg4', 'pkg5', 'pkg3', 'pkg4', 'pkg5', 'pkg4', 'pkg5', 'pkg5']
